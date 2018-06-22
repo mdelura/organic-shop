@@ -1,8 +1,21 @@
 <mat-toolbar color="primary">
     <button mat-button routerLink=".">Organic Shop</button>
-    <button mat-button routerLink="products">Products</button>
     <span class="fill-remaining-space"></span>
     <button mat-icon-button>
-        <mat-icon routerLink="shopping-cart" aria-label="Shopping Cart">shopping_cart</mat-icon>
+        <mat-icon routerLink="shopping-cart" matTooltip="Go to Shopping Cart">shopping_cart</mat-icon>
     </button>
+    <button mat-icon-button [matMenuTriggerFor]="menu"
+        #menuTrigger="matMenuTrigger" 
+        (mouseenter)="menuTrigger.openMenu()">
+        <mat-icon>person</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" yPosition="below" [overlapTrigger]="false">
+        <button mat-menu-item routerLink="my-orders">
+            <mat-icon>shopping_basket</mat-icon>
+            <span>My Orders</span>
+        </button>
+        <button mat-menu-item routerLink="admin-orders">Manage Orders</button>
+        <button mat-menu-item routerLink="admin-products">Manage Products</button>
+        <button mat-menu-item >Log Out</button>
+    </mat-menu>
 </mat-toolbar>
