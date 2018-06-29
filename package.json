@@ -28,6 +28,7 @@
     "firebase-tools": "^3.19.0",
     "g": "^2.0.1",
     "hammerjs": "^2.0.8",
+    "ng4-validators": "^6.0.0",
     "rxjs": "^6.0.0",
     "rxjs-compat": "^6.2.1",
     "zone.js": "^0.8.26"

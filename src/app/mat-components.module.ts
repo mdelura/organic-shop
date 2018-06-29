@@ -4,6 +4,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule, MatSortModule } from '@angular/material';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   exports: [
@@ -12,6 +17,12 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatButtonModule,
     MatMenuModule,
     MatTooltipModule,
+    MatInputModule,
+    MatSelectModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatCardModule,
   ]
 })
 export class MatComponentsModule { }
