@@ -1,74 +1,73 @@
-<form #f="ngForm" (ngSubmit)="save(f.value)">
-
-  <!-- Title -->
-  <mat-form-field>
-    <input matInput placeholder="Title" type="text" ngModel name="title" #title="ngModel"
-      required>
-    <mat-error *ngIf="title.touched && title.errors?.required">
-      Title is <strong>required</strong>.
-    </mat-error>
-  </mat-form-field>
-  <br>
-
-  <!-- Price -->
-  <mat-form-field>
-    <input matInput placeholder="Price" type="number" ngModel name="price" #price="ngModel"
-      [gt]="0"
-      required>
-    <span matSuffix>$</span>
-    <mat-error *ngIf="price.touched && price.errors?.required">
-      Price is <strong>required</strong>.
-    </mat-error>
-    <mat-error *ngIf="price.touched && price.errors?.gt">
-      Price is must be <strong>greater than 0</strong>.
-    </mat-error>
-  </mat-form-field>
-  <br>
-
-  <!-- Category -->
-  <mat-form-field>
-    <mat-select placeholder="Category" ngModel name="category" #category="ngModel"
-      required>
-        <mat-option></mat-option>
-      <mat-option *ngFor="let category of categories$ | async" [value]="category.value">
-        {{ category.name }}
-      </mat-option>
-    </mat-select>
-    <mat-error *ngIf="category.touched && category.errors?.required">
-      Category is <strong>required</strong>.
-    </mat-error>
-  </mat-form-field>
-  <br>
-
-  <!-- Image URL -->
-  <mat-form-field>
-    <input matInput placeholder="Image URL" type="url" ngModel name="imageUrl" #imageUrl="ngModel"  
-      url
-      required>
-    <mat-error *ngIf="imageUrl.touched && imageUrl.errors?.required">
-      Image URL is <strong>required</strong>.
-    </mat-error>
-    <mat-error *ngIf="imageUrl.touched && imageUrl.errors?.url">
-      Provided URL is <strong>invalid</strong>.
-    </mat-error>
-  </mat-form-field>
-  <br>
-  <br>
-  <button mat-raised-button color="primary">Save</button>  
-</form>
-
-<button (click)="delete()" mat-raised-button color="warn">Delete</button><br>
-
-<mat-card class="example-card">
-    <!-- <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-    </mat-card-header> -->
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-      <p>
-        Title nad Price
-      </p>
-    </mat-card-content>
-  </mat-card>
+<mat-grid-list cols="2">
+  <mat-grid-tile>
+    <form #f="ngForm" (ngSubmit)="save(f.value)">
+      <!-- Title -->
+      <mat-form-field>
+        <input matInput placeholder="Title" type="text" [(ngModel)]="product.title" name="title" #title="ngModel"
+          required>
+        <mat-error *ngIf="title.touched && title.errors?.required">
+          Title is <strong>required</strong>.
+        </mat-error>
+      </mat-form-field>
+      <br>
+    
+      <!-- Price -->
+      <mat-form-field>
+        <input matInput placeholder="Price" type="number" [(ngModel)]="product.price" name="price" #price="ngModel"
+          [gt]="0"
+          required>
+        <span matSuffix>$</span>
+        <mat-error *ngIf="price.touched && price.errors?.required">
+          Price is <strong>required</strong>.
+        </mat-error>
+        <mat-error *ngIf="price.touched && price.errors?.gt">
+          Price is must be <strong>greater than 0</strong>.
+        </mat-error>
+      </mat-form-field>
+      <br>
+    
+      <!-- Category -->
+      <mat-form-field>
+        <mat-select placeholder="Category" [(ngModel)]="product.category" name="category" #category="ngModel"
+          required>
+            <mat-option></mat-option>
+          <mat-option *ngFor="let category of categories$ | async" [value]="category.value">
+            {{ category.name }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="category.touched && category.errors?.required">
+          Category is <strong>required</strong>.
+        </mat-error>
+      </mat-form-field>
+      <br>
+    
+      <!-- Image URL -->
+      <mat-form-field>
+        <input matInput placeholder="Image URL" type="url" [(ngModel)]="product.imageUrl" name="imageUrl" #imageUrl="ngModel"  
+          url
+          required>
+        <mat-error *ngIf="imageUrl.touched && imageUrl.errors?.required">
+          Image URL is <strong>required</strong>.
+        </mat-error>
+        <mat-error *ngIf="imageUrl.touched && imageUrl.errors?.url">
+          Provided URL is <strong>invalid</strong>.
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <br>
+      <button mat-raised-button color="primary">Save</button>
+      <button type="button" (click)="delete()" mat-raised-button color="warn">Delete</button><br>
+    </form>
+    <p>
+    </p>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="mat-elevation-z2">
+      <!-- <mat-card-header> -->
+        <mat-card-title>{{ product.title }}</mat-card-title>
+        <mat-card-subtitle>{{ product.price | currency: 'USD':'symbol' }}</mat-card-subtitle>
+      <!-- </mat-card-header> -->
+      <img mat-card-image *ngIf="product.imageUrl" [src]="product.imageUrl"> 
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

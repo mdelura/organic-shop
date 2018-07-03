@@ -14,8 +14,8 @@
         <ng-container *ngIf="appUser; else anonymousUser">
             <button mat-menu-item routerLink="my-orders">My Orders</button>
             <ng-container *ngIf="appUser.isAdmin">
-                <button mat-menu-item routerLink="admin-orders">Manage Orders</button>
-                <button mat-menu-item routerLink="admin-products">Manage Products</button>
+                <button mat-menu-item routerLink="admin/orders">Manage Orders</button>
+                <button mat-menu-item routerLink="admin/products">Manage Products</button>
             </ng-container>
             <button mat-menu-item (click)="logout()">Log Out</button>
         </ng-container>
