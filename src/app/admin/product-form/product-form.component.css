@@ -1,0 +1,14 @@
+form, 
+.mat-form-field,
+mat-card {
+    width: 100%;
+}
+
+mat-card {
+    min-height: 100px;
+}
+
+img,
+.mat-raised-button {
+    margin: 1px;
+}

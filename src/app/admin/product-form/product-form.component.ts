@@ -6,7 +6,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/take';
 import { DialogComponent } from '../../dialog/dialog.component';
 import { MatDialog } from '@angular/material';
-import { Product } from '../../model/product';
 
 @Component({
   selector: 'app-product-form',
@@ -31,8 +30,7 @@ export class ProductFormComponent implements OnInit {
     if (this.id) {
       this.productService.get(this.id).take(1).subscribe(p => this.product = p);
     }
-
-   }
+  }
 
   ngOnInit() {
   }

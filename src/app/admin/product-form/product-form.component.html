@@ -1,4 +1,4 @@
-<mat-grid-list cols="2">
+<mat-grid-list cols="2" gutterSize="20px">
   <mat-grid-tile>
     <form #f="ngForm" (ngSubmit)="save(f.value)">
       <!-- Title -->
@@ -55,8 +55,8 @@
       </mat-form-field>
       <br>
       <br>
-      <button mat-raised-button color="primary">Save</button>
-      <button type="button" (click)="delete()" mat-raised-button color="warn">Delete</button><br>
+      <button mat-raised-button color="primary" [disabled]="(!f.valid || !f.touched)">Save</button>
+      <button *ngIf="id" type="button" (click)="delete()" mat-raised-button color="warn">Delete</button><br>
     </form>
     <p>
     </p>
