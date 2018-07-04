@@ -62,11 +62,9 @@
     </p>
   </mat-grid-tile>
   <mat-grid-tile>
-    <mat-card class="mat-elevation-z2">
-      <!-- <mat-card-header> -->
-        <mat-card-title>{{ product.title }}</mat-card-title>
-        <mat-card-subtitle>{{ product.price | currency: 'USD':'symbol' }}</mat-card-subtitle>
-      <!-- </mat-card-header> -->
+    <mat-card *ngIf="product.title" class="mat-elevation-z2">
+      <mat-card-title>{{ product.title }}</mat-card-title>
+      <mat-card-subtitle>{{ product.price | currency: 'USD':'symbol' }}</mat-card-subtitle>
       <img mat-card-image *ngIf="product.imageUrl" [src]="product.imageUrl"> 
     </mat-card>
   </mat-grid-tile>
