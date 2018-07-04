@@ -4,3 +4,7 @@ export interface Product {
     category: string;
     imageUrl: string;
 }
+
+export interface KeyedProduct extends Product {
+    key: string;
+}
