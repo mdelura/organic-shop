@@ -59,8 +59,9 @@ import { DialogComponent } from './dialog/dialog.component';
     BrowserAnimationsModule,
     MatComponentsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent },
+      { path: '', component: ProductsComponent },
       { path: 'products', component: ProductsComponent },
+      { path: 'products/:category', component: ProductsComponent },
       { path: 'shopping-cart', component: ShoppingCartComponent },
       { path: 'login', component: LoginComponent },
 

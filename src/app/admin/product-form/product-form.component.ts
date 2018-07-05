@@ -23,12 +23,12 @@ export class ProductFormComponent implements OnInit {
     private productService: ProductService,
     public dialog: MatDialog,
     categoryService: CategoryService) {
-    this.categories$ = categoryService.getCategories();
+    this.categories$ = categoryService.getAll();
 
-    this.id = this.route.snapshot.paramMap.get('id');
+    this.id = route.snapshot.paramMap.get('id');
 
     if (this.id) {
-      this.productService.get(this.id).take(1).subscribe(p => this.product = p);
+      productService.get(this.id).take(1).subscribe(p => this.product = p);
     }
   }
 
