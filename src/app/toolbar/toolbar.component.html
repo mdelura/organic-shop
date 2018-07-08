@@ -1,14 +1,6 @@
+<!-- TODO: Make it stick to the top -->
 <mat-toolbar color="primary">
-    <button mat-button [matMenuTriggerFor]="productsMenu">Products</button>
-    <mat-menu #productsMenu="matMenu">
-        <button mat-menu-item 
-            routerLink="/" [disabled]="!activeCategory">All Categories</button>
-        <button mat-menu-item 
-            *ngFor="let category of categories$ | async"
-            routerLink="/"
-            [queryParams]="{ category: category.value }"
-            [disabled]="activeCategory === category.value"> {{ category.name }} </button>
-    </mat-menu>
+    <app-product-filter></app-product-filter>
     <span class="fill-remaining-space"></span>
     <button mat-icon-button>
         <mat-icon routerLink="shopping-cart" matTooltip="Go to Shopping Cart">shopping_cart</mat-icon>

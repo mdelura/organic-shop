@@ -26,7 +26,7 @@ export class ProductsComponent implements OnInit {
         })
         .subscribe(params => {
           const category =  params.get('category');
-            this.filteredProducts = (category) && (this.products)
+            this.filteredProducts = category
               ? this.products.filter(p => p.category === params.get('category'))
               : this.products;
         });

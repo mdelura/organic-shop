@@ -1,11 +1,6 @@
-<mat-grid-list cols="2" gutterSize="8">
+<mat-grid-list cols="3" gutterSize="8">
     <mat-grid-tile *ngFor="let product of filteredProducts">
-        <mat-card class="mat-elevation-z2">
-            <mat-card-title>{{ product.title }}</mat-card-title>
-            <mat-card-subtitle>{{ product.price | currency: 'USD':'symbol' }}</mat-card-subtitle>
-            <img mat-card-image *ngIf="product.imageUrl" [src]="product.imageUrl" class="mat-elevation-z2"> 
-            <button mat-raised-button color="primary">Add to Cart</button>
-        </mat-card>
+        <app-product-card [product]="product"></app-product-card>
     </mat-grid-tile>
 </mat-grid-list>
 

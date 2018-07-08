@@ -1,0 +1,10 @@
+<button mat-button [matMenuTriggerFor]="productsMenu">Products</button>
+<mat-menu #productsMenu="matMenu">
+  <button mat-menu-item 
+    routerLink="/" >All Categories</button>
+  <button mat-menu-item 
+      *ngFor="let category of categories$ | async"
+      routerLink="/"
+      [queryParams]="{ category: category.value }"
+      [disabled]="activeCategory === category.value"> {{ category.name }} </button>
+</mat-menu>

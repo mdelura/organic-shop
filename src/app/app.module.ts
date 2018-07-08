@@ -29,6 +29,8 @@ import { FormsModule, } from '@angular/forms';
 import { ProductService } from './product.service';
 import { CustomFormsModule } from 'ng4-validators';
 import { DialogComponent } from './dialog/dialog.component';
+import { ProductFilterComponent } from './products/product-filter/product-filter.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { DialogComponent } from './dialog/dialog.component';
     LoginComponent,
     ProductFormComponent,
     DialogComponent,
+    ProductFilterComponent,
+    ProductCardComponent,
   ],
   entryComponents: [
     DialogComponent
