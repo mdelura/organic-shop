@@ -28,7 +28,7 @@ import { MatListModule } from '@angular/material/list';
     MatCardModule,
     MatGridListModule,
     MatDialogModule,
-    MatListModule,
+    MatListModule
   ]
 })
 export class MatComponentsModule { }

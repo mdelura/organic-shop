@@ -2,4 +2,7 @@ mat-card, img {
     border-radius: 1%;
 }
 
-/* TODO: Fix proportions/images taking too much space */
+img {
+    max-width: 100%;
+    max-height: auto;
+}

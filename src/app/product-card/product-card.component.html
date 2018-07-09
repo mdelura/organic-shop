@@ -2,7 +2,6 @@
   <mat-card-title>{{ product.title }}</mat-card-title>
   <mat-card-subtitle>{{ product.price | currency: 'USD':'symbol' }}</mat-card-subtitle>
   <img 
-    mat-card-image
     *ngIf="product.imageUrl"
     [src]="product.imageUrl"
     [alt]="product.title"
