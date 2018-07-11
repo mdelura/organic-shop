@@ -12,6 +12,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatListModule } from '@angular/material/list';
+import { MatBadgeModule } from '@angular/material/badge';
 
 @NgModule({
   exports: [
@@ -28,7 +29,8 @@ import { MatListModule } from '@angular/material/list';
     MatCardModule,
     MatGridListModule,
     MatDialogModule,
-    MatListModule
+    MatListModule,
+    MatBadgeModule
   ]
 })
 export class MatComponentsModule { }

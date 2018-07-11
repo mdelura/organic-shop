@@ -31,6 +31,7 @@ import { CustomFormsModule } from 'ng4-validators';
 import { DialogComponent } from './dialog/dialog.component';
 import { ProductFilterComponent } from './products/product-filter/product-filter.component';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { ShoppingCartService } from './shopping-cart.service';
 
 @NgModule({
   declarations: [
@@ -102,6 +103,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
     UserService,
     CategoryService,
     ProductService,
+    ShoppingCartService
   ],
   bootstrap: [AppComponent]
 })

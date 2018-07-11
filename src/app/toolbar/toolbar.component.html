@@ -1,9 +1,13 @@
-<!-- TODO: Make it stick to the top -->
 <mat-toolbar color="primary">
     <app-product-filter></app-product-filter>
     <span class="fill-remaining-space"></span>
     <button mat-icon-button>
-        <mat-icon routerLink="shopping-cart" matTooltip="Go to Shopping Cart">shopping_cart</mat-icon>
+        <mat-icon 
+            routerLink="shopping-cart"
+            matTooltip="Go to Shopping Cart" 
+            [matBadge]="shoppingCartItemCount"
+            [matBadgeHidden]="shoppingCartItemCount === 0"
+            matBadgeColor="accent">shopping_cart</mat-icon>
     </button>
     <button mat-icon-button [matMenuTriggerFor]="userMenu">
         <mat-icon>person</mat-icon>
