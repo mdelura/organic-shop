@@ -2,12 +2,13 @@
     <app-product-filter></app-product-filter>
     <span class="fill-remaining-space"></span>
     <button mat-icon-button>
-        <mat-icon 
-            routerLink="shopping-cart"
+        <mat-icon
+            *ngIf="cart$ | async as cart"
             matTooltip="Go to Shopping Cart" 
-            [matBadge]="shoppingCartItemCount"
-            [matBadgeHidden]="shoppingCartItemCount === 0"
-            matBadgeColor="accent">shopping_cart</mat-icon>
+            [matBadge]="cart.totalItemsCount"
+            [matBadgeHidden]="cart.totalItemsCount === 0"
+            matBadgeColor="accent"
+            routerLink="/shopping-cart">shopping_cart</mat-icon>
     </button>
     <button mat-icon-button [matMenuTriggerFor]="userMenu">
         <mat-icon>person</mat-icon>
