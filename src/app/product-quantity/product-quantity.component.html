@@ -1,0 +1,11 @@
+<button
+  (click)="removeFromCart()"
+  mat-icon-button>
+  <mat-icon>remove</mat-icon>
+</button>
+{{ shoppingCart.getQuantity(product) }}
+<button
+  (click)="addToCart()"
+  mat-icon-button>
+  <mat-icon>add</mat-icon>
+</button>

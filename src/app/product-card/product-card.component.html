@@ -6,25 +6,13 @@
     [src]="product.imageUrl"
     [alt]="product.title"
     class="mat-elevation-z2">
-  <mat-card-actions *ngIf="showActions">
-    
+  <mat-card-actions *ngIf="showActions && shoppingCart">
     <button
-      *ngIf="getQuantity() === 0; else updateQuantity"
+      *ngIf="shoppingCart.getQuantity(product) === 0; else updateQuantity"
       (click)="addToCart()"
       mat-raised-button>Add to Cart</button>
-
     <ng-template #updateQuantity>
-      <button
-        (click)="removeFromCart()"
-        mat-icon-button>
-        <mat-icon>remove</mat-icon>
-      </button>
-      {{getQuantity()}}
-      <button
-        (click)="addToCart()"
-        mat-icon-button>
-        <mat-icon>add</mat-icon>
-      </button>
+      <app-product-quantity [product]="product" [shoppingCart]="shoppingCart"></app-product-quantity>
     </ng-template>
   </mat-card-actions>
 </mat-card>
