@@ -4,10 +4,12 @@ import { KeyedProduct } from './product';
 export class ShoppingCart {
     items: ShoppingCartItem[] = [];
 
-    constructor(public itemsMap: { [key: string]: ShoppingCartItem }) {
+    constructor(private itemsMap: { [key: string]: ShoppingCartItem }) {
+        this.itemsMap = itemsMap || {};
+
         for (const key of Object.keys(this.itemsMap)) {
             const item = this.itemsMap[key];
-            this.items.push(new ShoppingCartItem(item.product, item.quantity));
+            this.items.push(new ShoppingCartItem({ key: key, ...item }));
         }
     }
 

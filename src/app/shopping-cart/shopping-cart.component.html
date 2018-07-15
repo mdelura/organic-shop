@@ -4,31 +4,48 @@
     You have {{ cart.totalItemsCount }} items in your shopping cart.
   </p>
   <div class="mat-elevation-z2">
-      <table mat-table [dataSource]="cart.items">
-    
-        <ng-container matColumnDef="title">
-          <th mat-header-cell *matHeaderCellDef> Product </th>
-          <td mat-cell *matCellDef="let cartItem"> {{ cartItem.product.title }} </td>
-          <td mat-footer-cell *matFooterCellDef> Total </td>
-        </ng-container>
+    <table mat-table [dataSource]="cart.items">
 
-        <ng-container matColumnDef="quantity">
-            <th mat-header-cell *matHeaderCellDef> Quantity </th>
-            <td mat-cell *matCellDef="let cartItem">
-              <app-product-quantity [product]="cartItem.product" [shoppingCart]="cart"></app-product-quantity> 
+        <ng-container matColumnDef="thumbnail">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let cartItem"> 
+              <!-- <img
+                class="thumbnail mat-elevation-z2"
+                *ngIf="cartItem.imageUrl"
+                [src]="cartItem.imageUrl"
+                [alt]="cartItem.title"> -->
+              <div [style.backgroundImage]="'url(' + cartItem.imageUrl + ')'" class="thumbnail mat-elevation-z2"></div>
             </td>
-            <td mat-footer-cell *matFooterCellDef></td>
-        </ng-container>
-    
-        <ng-container matColumnDef="price">
-          <th mat-header-cell *matHeaderCellDef> Price </th>
-          <td mat-cell *matCellDef="let cartItem"> {{ cartItem.totalPrice | currency: 'USD' }} </td>
-          <td mat-footer-cell *matFooterCellDef> {{ cart.totalPrice | currency: 'USD' }} </td>
-        </ng-container>
+            <td mat-footer-cell *matFooterCellDef> Total </td>
+          </ng-container>
+   
+      <ng-container matColumnDef="title" class="product">
+        <th mat-header-cell *matHeaderCellDef class="product"> Product </th>
+        <td mat-cell *matCellDef="let cartItem"> {{ cartItem.title }} </td>
+        <td mat-footer-cell *matFooterCellDef></td>
+      </ng-container>
 
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let cartItem; columns: displayedColumns;"></tr>
-        <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
-      </table>
-    </div>
+      <ng-container matColumnDef="quantity">
+          <th mat-header-cell *matHeaderCellDef class="quantity"> Quantity </th>
+          <td mat-cell *matCellDef="let cartItem" class="quantity">
+            <app-product-quantity [product]="cartItem" [shoppingCart]="cart"></app-product-quantity> 
+          </td>
+          <td mat-footer-cell *matFooterCellDef></td>
+      </ng-container>
+  
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef class="price"> Price </th>
+        <td mat-cell *matCellDef="let cartItem" class="price"> {{ cartItem.totalPrice | currency: 'USD' }} </td>
+        <td mat-footer-cell *matFooterCellDef class="price"> {{ cart.totalPrice | currency: 'USD' }} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let cartItem; columns: displayedColumns;"></tr>
+      <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+    </table>
+  </div>
+  <br>
+  <button
+      (click)="clearCart()"
+      mat-button color="warn">Clear Cart</button>
 </ng-container>

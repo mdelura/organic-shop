@@ -5,3 +5,25 @@ table {
 tr.mat-footer-row {
     font-weight: bold;
 }
+
+.product {
+    width: 50%;
+}
+
+.quantity {
+    text-align: center;
+}
+
+.price {
+    width: 10%;
+    text-align: right;
+}
+
+.thumbnail {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-size: cover;
+}
