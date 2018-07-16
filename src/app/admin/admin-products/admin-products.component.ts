@@ -18,20 +18,20 @@ export class AdminProductsComponent implements OnInit, OnDestroy {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(productService: ProductService) {
-    this.subscription = productService.getAllKeyedProducts()
-      .subscribe(products => this.initializeDataSource(products));
+  constructor(private productService: ProductService) {
    }
 
-   initializeDataSource(products: KeyedProduct[]) {
+   ngOnInit() {
+     this.subscription = this.productService.getAllKeyedProducts()
+     .subscribe(products => this.initializeDataSource(products));
+    }
+
+  initializeDataSource(products: KeyedProduct[]) {
     this.dataSource = new MatTableDataSource(products);
     this.dataSource.filterPredicate =
     (data: KeyedProduct, filter: string) => data.title.toLowerCase().includes(filter.trim().toLowerCase());
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-   }
-
-  ngOnInit() {
   }
 
   ngOnDestroy() {

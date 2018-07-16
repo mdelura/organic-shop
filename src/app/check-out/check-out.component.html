@@ -1,3 +1,10 @@
-<p>
-  check-out works!
-</p>
+<mat-grid-list cols="2" gutterSize="20px">
+  <mat-grid-tile>
+    <app-shipping-form></app-shipping-form>
+  </mat-grid-tile>
+  
+  <mat-grid-tile>
+    <!-- Order Summary -->
+    <app-shopping-cart header="Order Summary" [showActions]="false"></app-shopping-cart>
+  </mat-grid-tile>
+</mat-grid-list>

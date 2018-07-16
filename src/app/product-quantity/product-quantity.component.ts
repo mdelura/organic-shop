@@ -11,6 +11,7 @@ import { ShoppingCart } from '../model/shopping-cart';
 export class ProductQuantityComponent implements OnInit {
   @Input('product') product: KeyedProduct;
   @Input('shoppingCart') shoppingCart: ShoppingCart;
+  @Input('showActions') showActions = true;
 
   constructor(private cartService: ShoppingCartService) { }
 

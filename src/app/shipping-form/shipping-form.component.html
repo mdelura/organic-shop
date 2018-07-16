@@ -1,0 +1,35 @@
+<form #f="ngForm" (ngSubmit)="placeOrder()">
+  <h1>Shipping</h1>
+  <!-- Name -->
+  <mat-form-field>
+    <input matInput placeholder="Name" type="text" [(ngModel)]="shipping.name" name="name" #name="ngModel"
+      required>
+    <mat-error *ngIf="name.touched && name.errors?.required">
+      Name is <strong>required</strong>.
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Address -->
+  <mat-form-field>
+    <input matInput placeholder="Address" type="text" [(ngModel)]="shipping.addressLine1" name="addressLine1" #addressLine1="ngModel"
+      required>
+    <mat-error *ngIf="addressLine1.touched && addressLine1.errors?.required">
+      Address is <strong>required</strong>.
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Address Details" type="text" [(ngModel)]="shipping.addressLine2" name="addressLine2" #addressLine2="ngModel" required>
+    <mat-error *ngIf="addressLine1.touched && addressLine1.errors?.required">
+      Address Details are <strong>required</strong>.
+    </mat-error>
+  </mat-form-field>
+  <!-- City -->
+  <mat-form-field>
+    <input matInput placeholder="City" type="text" [(ngModel)]="shipping.city" name="city" #city="ngModel"
+      required>
+    <mat-error *ngIf="city.touched && city.errors?.required">
+      City is <strong>required</strong>.
+    </mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="primary" [disabled]="(!f.valid || !f.touched)">Place Order</button>
+</form>

@@ -27,3 +27,7 @@ tr.mat-footer-row {
     border-radius: 100%;
     background-size: cover;
 }
+
+.mat-button {
+    float: right;
+}
