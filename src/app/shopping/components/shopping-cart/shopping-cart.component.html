@@ -7,15 +7,15 @@
     <table mat-table [dataSource]="cart.items">
 
       <ng-container matColumnDef="thumbnail">
-        <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let cartItem"> 
+        <th mat-header-cell *matHeaderCellDef class="thumbnail-column"> Product </th>
+        <td mat-cell *matCellDef="let cartItem" class="thumbnail-column"> 
           <div [style.backgroundImage]="'url(' + cartItem.imageUrl + ')'" class="thumbnail mat-elevation-z2"></div>
         </td>
-        <td mat-footer-cell *matFooterCellDef> Total </td>
+        <td mat-footer-cell *matFooterCellDef class="thumbnail-column"> Total </td>
       </ng-container>
    
       <ng-container matColumnDef="title" class="product">
-        <th mat-header-cell *matHeaderCellDef class="product"> Product </th>
+        <th mat-header-cell *matHeaderCellDef class="product"></th>
         <td mat-cell *matCellDef="let cartItem"> {{ cartItem.title }} </td>
         <td mat-footer-cell *matFooterCellDef></td>
       </ng-container>

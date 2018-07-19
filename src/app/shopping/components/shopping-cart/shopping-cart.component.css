@@ -28,6 +28,10 @@ tr.mat-footer-row {
     background-size: cover;
 }
 
+.thumbnail-column {
+    width: 60px;
+}
+
 .mat-button {
     float: right;
 }
