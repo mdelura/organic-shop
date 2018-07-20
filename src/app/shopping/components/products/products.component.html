@@ -1,5 +1,5 @@
 <mat-grid-list cols="3" gutterSize="8" rowHeight="9:10" *ngIf="cart$ | async as cart">
-    <mat-grid-tile *ngFor="let product of filteredProducts">
+    <mat-grid-tile class="mat-elevation-z2" *ngFor="let product of filteredProducts">
         <app-product-card [product]="product" [shoppingCart]="cart"></app-product-card>
     </mat-grid-tile>
 </mat-grid-list>
