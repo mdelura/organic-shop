@@ -1,7 +1,8 @@
 # OrganicShop
 
-This is an Angular app project from [The Complete Angular Masterclass Course(https://www.udemy.com/the-complete-angular-master-class/).
+This is an Angular app project from [The Complete Angular Masterclass Course](https://www.udemy.com/the-complete-angular-master-class/).
 
+To see deployed demo app go to https://organic-shop-62ba4.firebaseapp.com/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
