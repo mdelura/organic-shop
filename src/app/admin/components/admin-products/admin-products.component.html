@@ -3,9 +3,9 @@
     routerLink="/admin/products/new"
     mat-raised-button color="primary">New Product</button>
 </p>
-<mat-form-field>
-  <input matInput [(ngModel)]="value" (keyup)="applyFilter($event.target.value)" placeholder="Filter...">
-  <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value = ''; applyFilter('')">
+<mat-form-field #filterField>
+  <input matInput [(ngModel)]="filterField.value" (keyup)="applyFilter($event.target.value)" placeholder="Filter...">
+  <button mat-button *ngIf="filterField.value" matSuffix mat-icon-button aria-label="Clear" (click)="value = ''; applyFilter('')">
     <mat-icon>close</mat-icon>
   </button>
 </mat-form-field>

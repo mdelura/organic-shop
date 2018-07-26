@@ -37,8 +37,8 @@ export class ProductService {
       });
   }
 
-  get(productId) {
-    return this.db.object(`/products/${productId}`).valueChanges();
+  get(productId): Observable<Product> {
+    return this.db.object(`/products/${productId}`).valueChanges() as Observable<Product>;
   }
 
   update(productId, product) {

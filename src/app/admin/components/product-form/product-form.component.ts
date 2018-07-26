@@ -6,6 +6,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/take';
 import { DialogComponent } from 'app/dialog/dialog.component';
 import { MatDialog } from '@angular/material';
+import { Product } from 'app/shared/models/product';
 
 @Component({
   selector: 'app-product-form',
@@ -14,7 +15,7 @@ import { MatDialog } from '@angular/material';
 })
 export class ProductFormComponent implements OnInit {
   categories$: Observable<any[]>;
-  product = {};
+  product: Product = {} as Product;
   id;
 
   constructor(

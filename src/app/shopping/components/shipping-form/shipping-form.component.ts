@@ -6,6 +6,7 @@ import { OrderService } from 'shared/services/order.service';
 import { ShoppingCart } from 'shared/models/shopping-cart';
 import { ShoppingCartService } from 'shared/services/shopping-cart.service';
 import { Subscription } from 'rxjs';
+import { Shipping } from '../../models/shipping';
 
 @Component({
   selector: 'app-shipping-form',
@@ -13,7 +14,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./shipping-form.component.css']
 })
 export class ShippingFormComponent implements OnInit, OnDestroy {
-  shipping = {};
+  shipping = {} as Shipping;
   userId: string;
   cart: ShoppingCart;
   subscriptions: Subscription[] = [];
